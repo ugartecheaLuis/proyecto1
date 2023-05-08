@@ -3,17 +3,11 @@
 #include "Cola.h"
 #include "Pila.h"
 
-cola* calcular (cola *c1){
-    cola *c = cola_vacia();
+void ordenar (cola *c1, cola *c){
     pila *p = pila_vacia();
     nodo *temp;
 
     while (es_vacia(c1) == 0){
-        printf ("Cola: ");
-        imprimir (c);
-        printf ("Pila: ");
-        printp (p);
-        printf ("%c\n", c1->head->op);
         if (97 <= c1->head->op && c1->head->op <=122){
             encolar (c, c1->head->op, c1->head->valor);
             desencolar (c1);
@@ -53,6 +47,41 @@ cola* calcular (cola *c1){
         encolar (c, c1->head->op, c1->head->valor);
         pop (p);
     }
-    return c;
 }
 
+int calcular (cola *c){
+    pila *p = pila_vacia ();
+    int x, y, r;
+    while (es_vacia(c) == 0){
+        if (97 <= c->head->op && c->head->op <= 122){
+            push (p, c->head->op, c->head->valor);
+            desencolar (c);
+        }else{
+            y = p->head->valor;
+            pop (p);
+            x = p->head->valor;
+            pop (p);
+            switch (c->head->op){
+            case '^':
+                r = pow(x,y);
+                break;
+            case '+':
+                r = x + y;
+                break;
+            case '-':
+                r = x - y;
+                break;
+            case '*':
+                r = x * y;
+                break;
+            case '/':
+                r = x/y;
+                break;
+            }
+            desencolar (c);
+            push (p, 'r', r);
+        }
+    }
+    r = p->head->valor;
+    return r;
+}

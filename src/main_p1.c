@@ -14,6 +14,7 @@ int main(){
     nodo *temp;
 
     c1 = cola_vacia();
+    c = cola_vacia();
 
     printf ("Ingresa la ecuacion\n");
     char ec[100];
@@ -61,70 +62,10 @@ int main(){
         }
     }
     imprimir (c1);
-
-    c = calcular (c1);
-
     
+    ordenar (c1, c);
+    imprimir (c);
+    printf ("El resultado es: %d\n", calcular(c));
+
     return 0;
 }
-
-
-
-    /*
-    for (int i = c1->len; i > 0; i--){
-        if (c1->head->op != '^' && c1->head->op != '+' && c1->head->op!='-' && c1->head->op!='*' && c1->head->op != '/' && c1->head->op != '(' && c1->head->op != ')'){
-            encolar (c, c1->head->op, c1->head->valor);
-            desencolar (c1);
-        }else{
-            if (es_vacia (c1) == true){
-                if (is_empty(p) == true){
-                    break;
-                }else{
-                    for (int i = p->len; i > 0; i--){
-                        encolar (c, p->head->op, p->head->valor);
-                        pop (p);
-                    }
-                }
-            }else{
-                if (c1->head->op == ')'){
-                    for (temp = p->head; temp->op != '('; temp = temp->sig){
-                        encolar (c, p->head->op, p->head->valor);
-                        pop (p);
-                    }
-                    pop (p);
-                }else{
-                    if (is_empty (p) == true){
-                        push (p, c1->head->op, c1->head->valor);
-                        if (p->head->op == '('){
-                            p->head->valor = 0;
-                        }
-                        if (p->head->op == '^'){
-                            p->head->valor = 3;
-                        }
-                    }else{
-                        if (c1->head->valor > p->head->valor){
-                            push (p, c1->head->op, c1->head->valor);
-                            if (p->head->op == '('){
-                                p->head->valor = 0;
-                            }
-                            if (p->head->op == '^'){
-                                p->head->valor = 3;
-                            }
-                        }else{
-                            encolar (c, p->head->op, p->head->valor);
-                            pop (p);
-                            push (p, c1->head->op, c1->head->valor);
-                            if (p->head->op == '('){
-                                p->head->valor = 0;
-                            }
-                            if (p->head->op == '^'){
-                                p->head->valor = 3;
-                            }
-                        }
-                    }
-                }
-                desencolar (c1);
-            }     
-        }
-    }
-    */
