@@ -22,6 +22,7 @@ int main(){
     scanf("%100[^\n]", ec);
     getchar();
     printf ("%s\n", ec);
+    encolar (c1, '(', 0);
     for (int i = 0; i < strlen(ec); i++){
         switch (ec[i]){
         case '^':
@@ -61,6 +62,7 @@ int main(){
             break;
         }
     }
+    encolar (c1, ')', -1);
     imprimir (c1);
     
     ordenar (c1, c);
