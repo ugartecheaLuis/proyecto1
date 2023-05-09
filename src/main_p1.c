@@ -18,7 +18,7 @@ int main(){
     c = cola_vacia();
 
     printf ("Ingresa la ecuacion\n");
-    char ec[100];
+    char ec[101];
     setbuf(stdin, NULL);
     scanf("%100[^\n]", ec);
     getchar();
@@ -54,9 +54,15 @@ int main(){
                 ec[i] += 32;
             }
             if ( 97 <= ec[i] && ec[i] <=122){
-                printf ("Cual es el valor de %c?\n", ec[i]);
-                scanf ("%d", &valor);
-                encolar (c1, ec[i], valor);
+                vValor t;
+                t = pertenece(c1,ec[i]);
+                if(t.b == 1){
+                    encolar(c1, ec[i], t.valor);
+                } else {
+                    printf ("Cual es el valor de %c?\n", ec[i]);
+                    scanf ("%d", &valor);
+                    encolar (c1, ec[i], valor);
+                }
             }else{
                 printf ("Caracter invalido");
             }

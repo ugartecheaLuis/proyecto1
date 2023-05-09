@@ -1,6 +1,23 @@
 #include <stdio.h>
 #include "Cola.h"
 #include "Pila.h"
+#include "Calcular.h"
+
+vValor pertenece (cola *c1,char op){
+    vValor r;
+    nodo *temp=c1->head;
+    for(int i=0; i < c1->len; i++){
+        if(temp->op == op){
+            r.b=1;
+            r.valor=temp->valor;
+            return r;
+        }
+        temp= temp->sig;
+    }
+    r.b=0;
+    r.valor=-1;
+    return r;
+}
 
 void ordenar (cola *c1, cola *c){
     pila *p = pila_vacia();
