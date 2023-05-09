@@ -5,11 +5,11 @@ typedef struct _nodo nodo;
 
 struct _nodo{
     char op;
-    int valor;
+    float valor;
     nodo *sig;
 };
 
-nodo* crear_nodo (char, int);
+nodo* crear_nodo (char, float);
 void borrar_nodo (nodo *);
 
 #endif

@@ -64,9 +64,9 @@ void ordenar (cola *c1, cola *c){
     }
 }
 
-int calcular (cola *c){
+float calcular (cola *c){
     pila *p = pila_vacia ();
-    int x, y, r;
+    float x, y, r;
     while (es_vacia(c) == 0){
         if (97 <= c->head->op && c->head->op <= 122){
             push (p, c->head->op, c->head->valor);

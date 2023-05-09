@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "Nodo.h"
 
-nodo *crear_nodo (char op, int valor){
+nodo *crear_nodo (char op, float valor){
     nodo *n;
     n = (nodo *)malloc(sizeof(nodo));
     n->op = op;

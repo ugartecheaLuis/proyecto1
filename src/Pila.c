@@ -26,7 +26,7 @@ void borrar_pila (pila *p){
     }
 }
 
-void push (pila *p, char op, int valor){
+void push (pila *p, char op, float valor){
     nodo *nuevo = crear_nodo (op, valor);
     if(p->len==0){
         p->head = p->tail = nuevo;
@@ -48,15 +48,6 @@ void pop (pila *p){
     }
 }
 
-int top (pila *p){
-    if(p->len > 0){
-        return p->head->valor;
-    }else{
-        printf("la pila esta vacia\n");
-        return -1;
-    }
-}
-
 void printp (pila *p){
     nodo *temp;
     temp = p->head;
@@ -67,7 +58,3 @@ void printp (pila *p){
     }
     printf ("]\n");
 }
-
-
-
-

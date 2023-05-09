@@ -9,7 +9,7 @@
 //misma variable y espacios
 int main(){
     cola *c1, *c;
-    int valor;
+    float valor;
     char op;
     bool b;
     nodo *temp;
@@ -60,7 +60,7 @@ int main(){
                     encolar(c1, ec[i], t.valor);
                 } else {
                     printf ("Cual es el valor de %c?\n", ec[i]);
-                    scanf ("%d", &valor);
+                    scanf ("%f", &valor);
                     encolar (c1, ec[i], valor);
                 }
             }else{
@@ -74,7 +74,7 @@ int main(){
     
     ordenar (c1, c);
     imprimir (c);
-    printf ("El resultado es: %d\n", calcular(c));
+    printf ("El resultado es: %f\n", calcular(c));
 
     return 0;
 }

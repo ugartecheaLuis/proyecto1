@@ -29,7 +29,7 @@ void borrar_cola(cola *c){
     }
 }
 
-void encolar (cola *c, char op, int valor){
+void encolar (cola *c, char op, float valor){
     nodo *nuevo;
     nuevo = crear_nodo (op, valor);
     if (c->len == 0){
@@ -50,15 +50,6 @@ void desencolar(cola *c){
         temp->sig=NULL;
         borrar_nodo(temp);
         c->len--;
-    }
-}
-
-int primero(cola *c){
-    if(c->len >0){
-        return c->head->valor;
-    }else{
-        printf("La cola esta vacia\n");
-        return -1;
     }
 }
 

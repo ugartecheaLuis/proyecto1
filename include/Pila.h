@@ -14,8 +14,7 @@ typedef struct _pila pila;
 pila* pila_vacia ();
 bool is_empty (pila *);
 void borrar_pila (pila *);
-void push (pila *, char, int);
+void push (pila *, char, float);
 void pop (pila *);
-int cima (pila *);
 void printp (pila *);
 #endif
