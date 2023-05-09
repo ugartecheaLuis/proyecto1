@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include "Nodo.h"
 #include "Cola.h"
+#include "Calcular.h"
 #include "Pila.h"
 //misma variable y espacios
 int main(){

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include "Cola.h"
 #include "Pila.h"
 
@@ -21,6 +20,7 @@ void ordenar (cola *c1, cola *c){
                 if(c1->head->op == ')'){
                     for (temp = p->head; temp->op != '('; temp = p->head){
                         encolar (c, p->head->op, p->head->valor);
+                        pop (p);
                     }
                     pop (p);
                     desencolar (c1);
@@ -61,7 +61,9 @@ int calcular (cola *c){
             pop (p);
             switch (c->head->op){
             case '^':
-                r = pow(x,y);
+                for(int i = 0;i < y; i++){
+                    r *= x;
+                }
                 break;
             case '+':
                 r = x + y;
