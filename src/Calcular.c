@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include "Cola.h"
 #include "Pila.h"
 #include "Calcular.h"
@@ -78,9 +79,7 @@ float calcular (cola *c){
             pop (p);
             switch (c->head->op){
             case '^':
-                for(int i = 0;i < y; i++){
-                    r *= x;
-                }
+                r = pow(x, y);
                 break;
             case '+':
                 r = x + y;
